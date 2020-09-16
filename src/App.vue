@@ -1,11 +1,17 @@
 <template>
-  <div id="app">Hello</div>
+  <div id="app">
+    Hello
+    <vs-main></vs-main>
+  </div>
 </template>
 
 <script>
+import vsMain from "./components/vs-main";
 export default {
   name: "App",
-  components: {}
+  components: {
+    vsMain
+  }
 };
 </script>
 
