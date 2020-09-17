@@ -1,14 +1,39 @@
 <template>
-  <div>
-    <h2>Catalog Item</h2>
-    <p>price</p>
+  <div class="vs-catalog-item">
+    <p class="vs-catalog-item__name">{{ car_data.name }}</p>
+    <p class="vs-catalog-item__price">Year: {{ car_data.year }}</p>
+    <button class="v-catalog-item__add_to_cart btn" @click="sendToParent">
+      Add to WishList
+    </button>
   </div>
 </template>
 
 <script>
 export default {
-  name: "vs-catalog-item"
+  name: "vs-catalog-item",
+  props: {
+    car_data: {
+      type: Object,
+      default() {
+        return {};
+      }
+    }
+  },
+  methods: {
+    sendToParent() {
+      this.$emit("sendId", this.car_data.id);
+    }
+  }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.vs-catalog-item {
+  flex-basis: 25%;
+  box-shadow: 0 0 8px 0 #e0e0e0;
+  //   padding: 16px;
+  //   margin-bottom: 16px;
+  padding: $padding * 2;
+  margin-bottom: $margin * 2;
+}
+</style>
