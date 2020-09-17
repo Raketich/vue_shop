@@ -2,7 +2,7 @@
   <div class="vs-catalog-item">
     <p class="vs-catalog-item__name">{{ car_data.name }}</p>
     <p class="vs-catalog-item__price">Year: {{ car_data.year }}</p>
-    <button class="v-catalog-item__add_to_cart btn" @click="sendToParent">
+    <button class="v-catalog-item__add_to_cart btn" @click="addToWishList">
       Add to WishList
     </button>
   </div>
@@ -20,8 +20,8 @@ export default {
     }
   },
   methods: {
-    sendToParent() {
-      this.$emit("sendId", this.car_data.id);
+    addToWishList() {
+      this.$emit("addToWishList", this.car_data);
     }
   }
 };

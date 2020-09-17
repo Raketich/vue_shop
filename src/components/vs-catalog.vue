@@ -6,7 +6,7 @@
         v-for="car in PRODUCTS"
         :key="car.id"
         :car_data="car"
-        @sendId="showId"
+        @addToWishList="addToWishList"
       ></vs-catalog-item>
     </div>
   </div>
@@ -24,9 +24,9 @@ export default {
     return {};
   },
   methods: {
-    ...mapActions(["GET_CARS_FROM_API"]),
-    showId(data) {
-      console.log(data);
+    ...mapActions(["GET_CARS_FROM_API", "ADD_TO_WISHLIST"]),
+    addToWishList(data) {
+      this.ADD_TO_WISHLIST(data);
     }
   },
   computed: {
