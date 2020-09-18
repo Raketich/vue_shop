@@ -31,6 +31,12 @@ let store = new Vuex.Store({
     },
     REMOVE_FROM_WISHLIST: (state, i) => {
       state.wishList.splice(i, 1);
+    },
+    INCREMENT: (state, i) => {
+      state.wishList[i].quantity++;
+    },
+    DECREMENT: (state, i) => {
+      if (state.wishList[i].quantity > 1) state.wishList[i].quantity--;
     }
   },
   actions: {
@@ -49,6 +55,12 @@ let store = new Vuex.Store({
     },
     ADD_TO_WISHLIST({ commit }, car) {
       commit("SET_WISHLIST", car);
+    },
+    INCREMENT_WL_ITEM({ commit }, i) {
+      commit("INCREMENT", i);
+    },
+    DECREMENT_WL_ITEM({ commit }, i) {
+      commit("DECREMENT", i);
     },
     DELETE_FROM_WISHLIST({ commit }, i) {
       commit("REMOVE_FROM_WISHLIST", i);

@@ -1,20 +1,23 @@
 <template>
   <div class="vs-main">
-    Hello from main
-    <vs-catalog></vs-catalog>
-    <vs-cart v-if="WISH_LIST.length" :wishList_data="WISH_LIST"></vs-cart>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
+
+    <!-- <vs-catalog></vs-catalog>
+    <vs-cart v-if="WISH_LIST.length" :wishList_data="WISH_LIST"></vs-cart> -->
   </div>
 </template>
 
 <script>
-import vsCatalog from "./vs-catalog";
-import vsCart from "./vs-cart";
+// import vsCatalog from "./vs-catalog";
+// import vsCart from "./vs-cart";
 import { mapGetters } from "vuex";
 export default {
   name: "vs-main",
   components: {
-    vsCatalog,
-    vsCart
+    // vsCatalog,
+    // vsCart
   },
   props: {},
   data() {

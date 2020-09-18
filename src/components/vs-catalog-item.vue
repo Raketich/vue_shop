@@ -2,6 +2,7 @@
   <div class="vs-catalog-item">
     <p class="vs-catalog-item__name">{{ car_data.name }}</p>
     <p class="vs-catalog-item__price">Year: {{ car_data.year }}</p>
+    <p>{{ car_data.price }}</p>
     <button class="v-catalog-item__add_to_cart btn" @click="addToWishList">
       Add to WishList
     </button>

@@ -1,5 +1,13 @@
 <template>
   <div class="vs-catalog">
+    <router-link
+      :to="{ name: 'wish_list', params: { wishList_data: WISH_LIST } }"
+    >
+      <div class="vs-catalog__link_to_wishlist">
+        In your WL: {{ WISH_LIST.length }}
+      </div>
+    </router-link>
+
     <h1>Catalog</h1>
     <div class="vs-catalog__list">
       <vs-catalog-item
@@ -30,7 +38,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["PRODUCTS"])
+    ...mapGetters(["PRODUCTS", "WISH_LIST"])
   },
   mounted() {
     this.GET_CARS_FROM_API().then((response) => {
@@ -47,6 +55,13 @@ export default {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+  }
+  &__link_to_wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: $padding * 2;
+    border: solid 1px #eaeaea;
   }
 }
 </style>

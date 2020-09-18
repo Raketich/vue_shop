@@ -4,35 +4,40 @@
             "name": "SF90",
             "year": "2019",
             "id": "19-sf90",
-            "available": true
+            "available": true,
+            "price": 55
         },
         {
             "image": "",
             "name": "RB1",
             "year": "2008",
             "id": "08-rb1",
-            "available": false
+            "available": false,
+            "price": 65
         },
         {
             "image": "",
             "name": "TR05",
             "year": "2010",
             "id": "10-tr-5",
-            "available": false
+            "available": false,
+            "price": 75
         },
         {
             "image": "",
             "name": "MCL",
             "year": "2015",
             "id": "15-mck",
-            "available": true
+            "available": true,
+            "price": 85
         },
         {
             "image": "",
             "name": "MW20",
             "year": "2020",
             "id": "20-mw20",
-            "available": true
+            "available": true,
+            "price": 95
         }
     ]
 }

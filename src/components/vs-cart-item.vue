@@ -7,7 +7,11 @@
     </div>
     <div class="v-cart-item__quantity">
       <p>Quantity:</p>
-      {{ wishList_data.quantity }}
+      <span>
+        <span @click="decrementItem" class="btn-quantity">-</span>
+        {{ wishList_data.quantity }}
+        <span @click="incrementItem" class="btn-quantity">+</span>
+      </span>
     </div>
     <button @click="deleteFromWishList">Eliminar</button>
   </div>
@@ -27,6 +31,12 @@ export default {
   methods: {
     deleteFromWishList() {
       this.$emit("deleteFromWishList");
+    },
+    decrementItem() {
+      this.$emit("decrement");
+    },
+    incrementItem() {
+      this.$emit("increment");
     }
   },
   mounted() {
@@ -44,5 +54,9 @@ export default {
   box-shadow: 0 0 8px 0 #e0e0e0;
   padding: $padding * 2;
   margin-bottom: $margin * 2;
+}
+.btn-quantity {
+  cursor: pointer;
+  box-shadow: 0 0 5px 0 #e0e0e0;
 }
 </style>
